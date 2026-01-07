@@ -1,0 +1,9 @@
+{
+  "services": [
+    {"name": "EC2-Web-Server", "hours": 500, "rate_per_hour": 0.50},
+    {"name": "RDS-Database", "hours": 720, "rate_per_hour": 1.20},
+    {"name": "S3-Storage", "hours": 720, "rate_per_hour": 0.05},
+    {"name": "Lambda-Functions", "hours": 100, "rate_per_hour": 0.00}
+  ],
+  "budget_limit": 1000.00
+}
