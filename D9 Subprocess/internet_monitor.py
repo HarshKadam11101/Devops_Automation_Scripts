@@ -20,5 +20,5 @@ else:
     print(f"{address} is down")
 
 with open("monitor.log","a") as f:
-    f.write(f"[{timestamp}] Target : {address} | Status:{status}")
+    f.write(f"[{timestamp}] Target : {address} | Status:{status}\n")
     print("Saved to monitor.log")
