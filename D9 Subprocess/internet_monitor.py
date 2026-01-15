@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import subprocess
 import sys
+import os
 from datetime import datetime
 
 if len(sys.argv)<2 :
@@ -9,6 +10,8 @@ if len(sys.argv)<2 :
 
 address = sys.argv[1]
 timestamp =  datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+log_file_path = os.path.join(script_dir, "monitor.log")
 
 result = subprocess.run(["ping","-c","1",address],capture_output=True,text=True)
 
@@ -19,6 +22,6 @@ else:
     status = "Down"
     print(f"{address} is down")
 
-with open("monitor.log","a") as f:
+with open(log_file_path,"a") as f:
     f.write(f"[{timestamp}] Target : {address} | Status:{status}\n")
     print("Saved to monitor.log")
