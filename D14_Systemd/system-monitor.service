@@ -1,0 +1,14 @@
+[Unit]
+Description=My Custom System Monitor
+After=network.target
+
+[Service]
+Type=simple
+# REPLACE THIS PATH BELOW 👇
+WorkingDirectory = /mnt/c/Users/Harsh/PycharmProjects/Devops/D13_System_health_montioring/
+ExecStart=/usr/bin/python3 /mnt/c/Users/Harsh/PycharmProjects/Devops/D13_System_health_montioring/system_health_monitoring.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
