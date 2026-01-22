@@ -3,9 +3,7 @@ import psutil
 import time
 from datetime import datetime
 
-
 def write_log(message) :
-
     timestamp = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
     logged_msg = f"[{timestamp}] : {message}\n"
 
