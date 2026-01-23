@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  monitor-backend:
+    build: .
+    volumes:
+      - ./appdata:/shared_data
+    restart: always
+
+  web-frontent:
+    image: nginx:alpine
+    ports: 
+      - "8080:80"
+    volumes:
+      - ./appdata:/usr/share/nginx/html
+    depends_on:
+      - monitor-backend
+
