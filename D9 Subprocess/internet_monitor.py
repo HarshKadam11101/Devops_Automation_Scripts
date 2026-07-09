@@ -11,7 +11,9 @@ if len(sys.argv)<2 :
 address = sys.argv[1]
 timestamp =  datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 script_dir = os.path.dirname(os.path.abspath(__file__))
+print(script_dir)
 log_file_path = os.path.join(script_dir, "monitor.log")
+print(log_file_path)
 
 result = subprocess.run(["ping","-c","1",address],capture_output=True,text=True)
 

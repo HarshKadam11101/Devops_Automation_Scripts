@@ -13,9 +13,9 @@ mkdir -p $BACKUP_DIR
 if [ -f "$SOURCE_FILE" ]; then
     cp "$SOURCE_FILE" "$BACKUP_DIR/$BACKUP_FILE"
     > "$SOURCE_FILE"
-    echo "✅ Backup success: $BACKUP_FILE"
+    echo "Backup success: $BACKUP_FILE"
 else
-    echo "❌ Error: Source file not found!"
+    echo "Error: Source file not found!"
     exit 1
 fi
 
